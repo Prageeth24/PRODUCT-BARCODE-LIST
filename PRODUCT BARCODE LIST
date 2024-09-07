@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT BARCODE LIST</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-bottom: 50px; /* Add padding to the bottom of the body */
+          }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible layout */
+            gap: 50px; /* Gap between the cards */
+            width: 85%;
+            max-width: 1200px;
+            justify-items: center; /* Centers the cards horizontally */
+            margin-bottom: 17px; /* Add margin at the bottom to create space */
+          }
+
+        header {
+            margin-top: 1rem;
+			margin-bottom: 0rem;
+        }
+
+        h1 {
+            color: #ff0000;
+            font-size: 6rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+            letter-spacing: 45px;
+        }
+
+        /* Grid layout for the brand cards */
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible layout */
+            gap: 50px; /* Gap between the cards */
+            width: 85%;
+            max-width: 1200px;
+            justify-items: center; /* Centers the cards horizontally */
+        }
+
+        .brand-card {
+            width: 250px; /* Set a fixed width for all cards */
+            height: 220px; /* Slightly taller for better layout */
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            animation: fadeIn 0.8s ease forwards;
+            
+            /* Flexbox to center content inside the card */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers the content vertically */
+            align-items: center; /* Centers the content horizontally */
+        }
+
+        .brand-card img {
+            width: 150px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px; /* Adds space between image and h2 */
+        }
+
+        /* Centering h2 */
+        .brand-card h2 {
+            font-size: 1.3rem;
+            color: #000000;
+            text-align: center;
+        }
+		
+		/* Remove underline from links */
+        a {
+            text-decoration: none;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BARCODES</h1>
+    </header>
+
+    <section class="brand-grid">
+        <!-- Linking the brand card to a new page -->
+        <a href="MOGU MOGU.html">
+            <div class="brand-card">
+                <img src="https://tinypic.host/images/2024/09/07/MOGU-MOGU.png" alt="Brand 1 Logo">
+                <h2>MOGU MOGU</h2>
+            </div>
+        </a>
+		
+		<a href="SAPPE.html">
+            <div class="brand-card">
+                <img src="https://tinypic.host/images/2024/09/07/SAPPE.png" alt="Brand 3 Logo">
+                <h2>SAPPE</h2>
+            </div>
+        </a>
+		
+		<a href="CARLSBERG.html">
+            <div class="brand-card">
+                <img src="https://tinypic.host/images/2024/09/07/CARLSBERG.png" alt="Brand 4 Logo">
+                <h2>CARLSBERG</h2>
+            </div>
+        </a>
+		
+		
+        <a href="V-FRESH.html">
+            <div class="brand-card">
+                <img src="https://tinypic.host/images/2024/09/07/V-FRESH.png" alt="Brand 5 Logo">
+                <h2>V-FRESH NATURAL</h2>
+            </div>
+        </a>
+		
+		
+        <a href="VALLEY FRESH.html">
+            <div class="brand-card">
+                <img src="https://tinypic.host/images/2024/09/07/VALLEY-FRESH.png" alt="Brand 6 Logo">
+                <h2>VALLEY FRESH</h2>
+            </div>
+        </a>
+		
+		
+		<a href="TROPICAL GARDEN.html">
+            <div class="brand-card">
+                <img src="https://tinypic.host/images/2024/09/07/TROPICAL-GARDEN.png" alt="Brand 7 Logo">
+                <h2>TROPICAL GARDEN</h2>
+            </div>
+        </a>
+		
+		
+		<a href="WALKERS.html">
+            <div class="brand-card">
+                <img src="https://tinypic.host/images/2024/09/07/WALKERS.png" alt="Brand 8 Logo">
+                <h2>WALKER'S</h2>
+            </div>
+        </a>
+	
+	
+		<a href="ENA.html">
+            <div class="brand-card">
+                <img src="https://tinypic.host/images/2024/09/07/ENA.png" alt="Brand 9 Logo">
+                <h2>ENA</h2>
+            </div>
+        </a>
+		
+		
+				<a href="LAYS.html">
+            <div class="brand-card">
+                <img src="https://tinypic.host/images/2024/09/07/LAYS2.png" alt="Brand 10 Logo">
+                <h2>LAYS</h2>
+            </div>
+        </a>
+		
+        <!-- Add more brand cards as needed -->
+    </section>
+</body>
+</html>
