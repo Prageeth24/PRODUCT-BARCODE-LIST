@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALLEY FRESH</title>
+    <style>
+        body {
+            background: hsl(220deg, 10%, 97%);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            transition: opacity 0.5s ease-out; /* Fade transition effect */
+            opacity: 1;
+        }
+
+        .fade-out {
+            opacity: 0; /* Fade out effect */
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 3s ease-out forwards; /* Fade-in effect */
+        }
+		
+        .outer-border {
+            border-radius: 15px; /* Rounded corners for outer border */
+            padding: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 100%; /* Full width */
+            box-sizing: border-box;
+        }
+        
+        /* Valley Fresh bs Styles */
+        .container.valley-fresh-bs {
+            border: 5px solid #28C928; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.valley-fresh-bs h1 {
+            text-align: center;
+            background-color: #28C928;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		/* Valley Fresh cm Styles */
+        .container.valley-fresh-cm {
+            border: 5px solid #00c5ff; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.valley-fresh-cm h1 {
+            text-align: center;
+            background-color: #00c5ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+		/* Valley Fresh fj Styles */
+        .container.valley-fresh-fj {
+            border: 5px solid #ff0000; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.valley-fresh-fj h1 {
+            text-align: center;
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		/* Valley Fresh 100 cj Styles */
+        .container.valley-fresh-100-cj {
+            border: 5px solid #00b42c; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.valley-fresh-100-cj h1 {
+            text-align: center;
+            background-color: #00b52c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+				/* Valley Fresh With Pilp Styles */
+        .container.valley-fresh-with-pulp {
+            border: 5px solid #00b42c; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.valley-fresh-with-pulp h1 {
+            text-align: center;
+            background-color: #00b52c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+
+        /* Common Gallery Styles */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Increased gap between items */
+            justify-content: center;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px; /* Fixed width for each item (image and detail box) */
+            margin: 0; /* No extra margin */
+        }
+        .gallery-item img {
+            width: 100%; /* Make image responsive */
+            max-width: 170px; /* Limit image size */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .detail-box {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px; /* Consistent margin-top for better alignment */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Detail box takes up the full width of the item */
+            max-width: 170px;
+        }
+        .detail-box h2 {
+            text-transform: uppercase;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .detail-box p {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #555;
+        }
+		
+        .barcode {
+            color: #00a31e !important; /* Ensure color */
+            display: block;
+            font-weight: bold;
+            font-size: 16px !important; /* Adjust size as needed */
+            margin-top: 10px;
+            color: #00a31e;
+            text-align: center;
+        }
+		
+			.scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px; /* Rounded corners for a modern look */
+            padding: 10px 4px; /* Adjust padding to accommodate text and icon */
+            cursor: pointer;
+            font-size: 16px; /* Adjust font size */
+            display: none; /* Hidden by default, shown on scroll */
+            transition: opacity 0.5s ease, background-color 0.5s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            white-space: nowrap; /* Prevent text wrapping */
+            text-align: center; /* Center text vertically */
+        }
+        .scroll-to-top:hover {
+            background-color: #41be0d; /* Darker background on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slightly more pronounced shadow on hover */
+        }
+        .scroll-to-top span {
+            display: inline-block;
+            vertical-align: center; /* Align icon and text */
+            margin-left: 2px; /* Space between icon and text */
+        }
+		
+		
+		
+		
+
+        /* Button Styles */
+        .button-arounder {
+            font-size: 1rem; /* Made the button smaller */
+            font-weight: bold;
+            background: #ffffff;
+            color: black;
+            box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);
+            transform: translateY(0);
+            border: solid 2px black;
+            padding: .375em 0.75em; /* Adjusted padding to make the button smaller */
+            margin-top: 10px;
+            border-radius: 8px; /* Slight rounded corners for better fit inside card */
+            --dur: .15s;
+            --delay: .15s;
+            --radius: 8px; /* Adjusted the radius */
+            transition: 
+                border-radius var(--dur) var(--delay) ease-out,
+                box-shadow calc(var(--dur) * 4) ease-out,
+                transform calc(var(--dur) * 4) ease-out,
+                background calc(var(--dur) * 4) steps(4, jump-end);
+            text-decoration: none; /* Remove underline from link */
+            display: inline-block; /* Ensure it aligns like a button */
+            text-align: center; /* Center text in link */
+        }
+
+        .button-arounder:hover,
+        .button-arounder:focus {
+            box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, .2);
+            transform: translateY(-4px);
+            background: hsl(110deg, 70%, 65%);
+            border-radius: var(--radius);
+        }
+    </style>
+</head>
+<body id="page-body" class="fade-in">
+
+    <!-- Valley-Fresh Basil Seed Section -->
+    <div class="outer-border">
+        <div class="container valley-fresh-bs">
+            <h1>VALLEY FRESH BASIL SEED</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-blueberry-front.png" alt="blueberry Flavor">
+                    <div class="detail-box">
+                        <h2>blueberry</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954627</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-cocktail-front.png" alt="cocktail Flavor">
+                    <div class="detail-box">
+                        <h2>cocktail</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954641</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-grape-front.png" alt="grape Flavor">
+                    <div class="detail-box">
+                        <h2>grape</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954658</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-honey-front.png" alt="honey Flavor">
+                    <div class="detail-box">
+                        <h2>honey</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954665</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-kiwi-front.png" alt="kiwi Flavor">
+                    <div class="detail-box">
+                        <h2>kiwi</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954832</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-lychee-front.png" alt="lychee Flavor">
+                    <div class="detail-box">
+                        <h2>lychee</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954672</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-mango-front.png" alt="mango Flavor">
+                    <div class="detail-box">
+                        <h2>mango</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954689</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-orange-front.png" alt="orange Flavor">
+                    <div class="detail-box">
+                        <h2>orange</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954702</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-peach-front.png" alt="peach Flavor">
+                    <div class="detail-box">
+                        <h2>peach</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954733</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-pineapple-front.png" alt="pineapple Flavor">
+                    <div class="detail-box">
+                        <h2>pineapple</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954740</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-pomegranate-front.png" alt="pomegranate Flavor">
+                    <div class="detail-box">
+                        <h2>pomegranate</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954757</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-strawberry-front.png" alt="strawberry Flavor">
+                    <div class="detail-box">
+                        <h2>strawberry</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954771</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/valley-fresh-watermelon-front.png" alt="watermelon Flavor">
+                    <div class="detail-box">
+                        <h2>watermelon</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954788</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+    <!-- Valley Fresh Coconut Milk Section -->
+    <div class="outer-border">
+        <div class="container valley-fresh-cm">
+            <h1>VALLEY FRESH COCONUT MILK</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-MILK-ALMOND-FRONT-SIDE.png" alt="Almond Flavor">
+                    <div class="detail-box">
+                        <h2>almond</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954849</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-MILK-BANANA-FRONT-SIDE.png" alt="Banana Flavor">
+                    <div class="detail-box">
+                        <h2>banana</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954856</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-MILK-CHOCOLATE-FRONT-SIDE.png" alt="CHOCOLATE Flavor">
+                    <div class="detail-box">
+                        <h2>CHOCOLATE</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954863</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-MILK-MANGO-FRONT-SIDE.png" alt="MANGO Flavor">
+                    <div class="detail-box">
+                        <h2>MANGO</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954870</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-MILK-MELON-FRONT-SIDE.png" alt="MELON Flavor">
+                    <div class="detail-box">
+                        <h2>MELON</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954887</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-MILK-ORIGINAL-FRONT-SIDE.png" alt="ORIGINAL Flavor">
+                    <div class="detail-box">
+                        <h2>ORIGINAL</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954894</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-MILK-PAPAYA-FRONT-SIDE.png" alt="PAPAYA Flavor">
+                    <div class="detail-box">
+                        <h2>PAPAYA</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954900</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-MILK-PINEAPPLE-FRONT-SIDE.png" alt="PINEAPPLE Flavor">
+                    <div class="detail-box">
+                        <h2>PINEAPPLE</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954917</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-MILK-STRAWBERRY-FRONT-SIDE.png" alt="STRAWBERRY Flavor">
+                    <div class="detail-box">
+                        <h2>STRAWBERRY</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954924</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>				
+                <!-- Add other V-Fresh Coconut Milk products here -->
+            </div>
+        </div>
+    </div>
+	
+	    <!-- Valley Fresh Fruit Juice Section -->
+    <div class="outer-border">
+        <div class="container valley-fresh-fj">
+            <h1>VALLEY FRESH FRUIT JUICE DRINKS</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-FRESH-GUAVA-JUICE-330mL.png" alt="GUAVA Flavor">
+                    <div class="detail-box">
+                        <h2>GUAVA</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0711347429187</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-FRESH-LYCHEE-JUICE-330mL.png" alt="LYCHEE Flavor">
+                    <div class="detail-box">
+                        <h2>LYCHEE</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0711347429224</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-FRESH-MANGOSTEEN-JUICE-330mL.png" alt="MANGOSTEEN Flavor">
+                    <div class="detail-box">
+                        <h2>MANGOSTEEN</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0711347429200</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-FRESH-PASSIONFRUIT-JUICE-330mL.png" alt="PASSIONFRUIT Flavor">
+                    <div class="detail-box">
+                        <h2>PASSIONFRUIT</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0711347429194</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-FRESH-PINEAPPLE-JUICE-330mL.png" alt="PINEAPPLE Flavor">
+                    <div class="detail-box">
+                        <h2>PINEAPPLE</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0711347429217</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-FRESH-SOURSOP-JUICE-330mL.png" alt="SOURSOP Flavor">
+                    <div class="detail-box">
+                        <h2>SOURSOP</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0711347429231</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>				
+				<!-- Add other Valley Fresh Fruit Juice products here -->
+            </div>
+        </div>
+    </div>	
+
+	    <!-- Valley Fresh 100 Coconut Water Section -->
+    <div class="outer-border">
+        <div class="container valley-fresh-100-cj">
+            <h1>VALLEY FRESH 100% COCONUT WATER</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-100-COCONUT-WATER-330ML.png" alt="100% COCONUT WATER 330mL">
+                    <div class="detail-box">
+                        <h2>100% COCONUT WATER</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0700433955211</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-100-COCONUT-WATER-500ML.png" alt="100% COCONUT WATER 500mL">
+                    <div class="detail-box">
+                        <h2>100% COCONUT WATER</h2>
+                        <p>Net Weight: 500mL</p>
+                        <p class="barcode">BR: 0700433955228</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+				<!-- Add other Valley Fresh 100 Coconut Water products here -->
+            </div>
+        </div>
+    </div>	
+
+	    <!-- Valley Fresh Coconut With Pulp Section -->
+    <div class="outer-border">
+        <div class="container valley-fresh-with-pulp">
+            <h1>VALLEY FRESH COCONUT JUICE WITH PULP</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-JUICE-WITH-PULP-330ML.png" alt="COCONUT WITH PULP 330mL">
+                    <div class="detail-box">
+                        <h2>COCONUT JUICE WITH PULP</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0714169839776</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/VALLEY-F-COCONUT-JUICE-WITH-PULP-500ML.png" alt="COCONUT WITH PULP 500mL">
+                    <div class="detail-box">
+                        <h2>COCONUT JUICE WITH PULP</h2>
+                        <p>Net Weight: 500mL</p>
+                        <p class="barcode">BR: 0689908980364</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+				<!-- Add other Valley Fresh Coconut With Pulp products here -->
+            </div>
+        </div>
+    </div>	
+	
+    <button id="scrollToTopBtn" class="scroll-to-top">
+        <span>GO UP &#11181;</span>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 100) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+		
+
+    </script>	
+</body>
+</html>

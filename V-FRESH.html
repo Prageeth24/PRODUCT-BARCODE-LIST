@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-FRESH NATURAL</title>
+    <style>
+        body {
+            background: hsl(220deg, 10%, 97%);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            transition: opacity 0.5s ease-out; /* Fade transition effect */
+            opacity: 1;
+        }
+
+        .fade-out {
+            opacity: 0; /* Fade out effect */
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 3s ease-out forwards; /* Fade-in effect */
+        }
+		
+        .outer-border {
+            border-radius: 15px; /* Rounded corners for outer border */
+            padding: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 100%; /* Full width */
+            box-sizing: border-box;
+        }
+        
+        /* V-Fresh bs Styles */
+        .container.v-fresh-bs {
+            border: 5px solid #28C928; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.v-fresh-bs h1 {
+            text-align: center;
+            background-color: #28C928;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		        /* V-Fresh cm Styles */
+        .container.v-fresh-cm {
+            border: 5px solid #00c5ff; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.v-fresh-cm h1 {
+            text-align: center;
+            background-color: #00c5ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+		        /* V-Fresh nc Styles */
+        .container.v-fresh-nc {
+            border: 5px solid #ff0000; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.v-fresh-nc h1 {
+            text-align: center;
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		/* V-Fresh 100 cj Styles */
+        .container.v-fresh-100-cj {
+            border: 5px solid #00b42c; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.v-fresh-100-cj h1 {
+            text-align: center;
+            background-color: #00b52c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		
+		/* V-Fresh Coconut Juice With Pulp Styles */
+        .container.v-fresh-with-pulp {
+            border: 5px solid #00b42c; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.v-fresh-with-pulp h1 {
+            text-align: center;
+            background-color: #00b52c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+
+        /* Common Gallery Styles */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Increased gap between items */
+            justify-content: center;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px; /* Fixed width for each item (image and detail box) */
+            margin: 0; /* No extra margin */
+        }
+        .gallery-item img {
+            width: 100%; /* Make image responsive */
+            max-width: 170px; /* Limit image size */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .detail-box {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px; /* Consistent margin-top for better alignment */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Detail box takes up the full width of the item */
+            max-width: 170px;
+        }
+        .detail-box h2 {
+            text-transform: uppercase;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .detail-box p {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #555;
+        }
+		
+        .barcode {
+            color: #00a31e !important; /* Ensure color */
+            display: block;
+            font-weight: bold;
+            font-size: 16px !important; /* Adjust size as needed */
+            margin-top: 10px;
+            color: #00a31e;
+            text-align: center;
+        }
+		
+			.scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px; /* Rounded corners for a modern look */
+            padding: 10px 4px; /* Adjust padding to accommodate text and icon */
+            cursor: pointer;
+            font-size: 16px; /* Adjust font size */
+            display: none; /* Hidden by default, shown on scroll */
+            transition: opacity 0.5s ease, background-color 0.5s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            white-space: nowrap; /* Prevent text wrapping */
+            text-align: center; /* Center text vertically */
+        }
+        .scroll-to-top:hover {
+            background-color: #41be0d; /* Darker background on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slightly more pronounced shadow on hover */
+        }
+        .scroll-to-top span {
+            display: inline-block;
+            vertical-align: center; /* Align icon and text */
+            margin-left: 2px; /* Space between icon and text */
+        }
+		
+		
+		
+		
+
+        /* Button Styles */
+        .button-arounder {
+            font-size: 1rem; /* Made the button smaller */
+            font-weight: bold;
+            background: #ffffff;
+            color: black;
+            box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);
+            transform: translateY(0);
+            border: solid 2px black;
+            padding: .375em 0.75em; /* Adjusted padding to make the button smaller */
+            margin-top: 10px;
+            border-radius: 8px; /* Slight rounded corners for better fit inside card */
+            --dur: .15s;
+            --delay: .15s;
+            --radius: 8px; /* Adjusted the radius */
+            transition: 
+                border-radius var(--dur) var(--delay) ease-out,
+                box-shadow calc(var(--dur) * 4) ease-out,
+                transform calc(var(--dur) * 4) ease-out,
+                background calc(var(--dur) * 4) steps(4, jump-end);
+            text-decoration: none; /* Remove underline from link */
+            display: inline-block; /* Ensure it aligns like a button */
+            text-align: center; /* Center text in link */
+        }
+
+        .button-arounder:hover,
+        .button-arounder:focus {
+            box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, .2);
+            transform: translateY(-4px);
+            background: hsl(110deg, 70%, 65%);
+            border-radius: var(--radius);
+        }	
+    </style>
+</head>
+<body id="page-body" class="fade-in">
+
+    <!-- V-Fresh Basil Seed Section -->
+    <div class="outer-border">
+        <div class="container v-fresh-bs">
+            <h1>V-FRESH NATURAL BASIL SEED</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-apple-front.png" alt="Apple Flavor">
+                    <div class="detail-box">
+                        <h2>apple</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768013112</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-banana-front.png" alt="Banana Flavor">
+                    <div class="detail-box">
+                        <h2>banana</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015628</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-blueberry-front.png" alt="Blueberry Flavor">
+                    <div class="detail-box">
+                        <h2>blueberry</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214459</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-cocktail-front.png" alt="Cocktail Flavor">
+                    <div class="detail-box">
+                        <h2>cocktail</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0714169839875</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-coconut-front.png" alt="Coconut Flavor">
+                    <div class="detail-box">
+                        <h2>coconut</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0714169839868</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-grape-front.png" alt="Grape Flavor">
+                    <div class="detail-box">
+                        <h2>grape</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015635</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-honey-front.png" alt="Honey Flavor">
+                    <div class="detail-box">
+                        <h2>honey</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768013105</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+				<div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-kiwi-front.png" alt="kiwi Flavor">
+                    <div class="detail-box">
+                        <h2>kiwi</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955143</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-lychee-front.png" alt="Lychee Flavor">
+                    <div class="detail-box">
+                        <h2>lychee</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015659</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-mango-front.png" alt="Mango Flavor">
+                    <div class="detail-box">
+                        <h2>mango</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015826</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-mangosteen-front.png" alt="Mangoosteen Flavor">
+                    <div class="detail-box">
+                        <h2>mangosteen</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015734</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-orange-front.png" alt="Orange Flavor">
+                    <div class="detail-box">
+                        <h2>orange</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768013099</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-papaya-front.png" alt="papaya Flavor">
+                    <div class="detail-box">
+                        <h2>papaya</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015673</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-passionfruit-front.png" alt="passionfruit Flavor">
+                    <div class="detail-box">
+                        <h2>passionfruit</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015680</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-peach-front.png" alt="Peach Flavor">
+                    <div class="detail-box">
+                        <h2>peach</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015697</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-pineapple-front.png" alt="Pineapple Flavor">
+                    <div class="detail-box">
+                        <h2>pineapple</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768013082</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-pink-guava-front.png" alt="pink guava Flavor">
+                    <div class="detail-box">
+                        <h2>pink guava</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955273</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-pomegranate-front.png" alt="Pomegranate Flavor">
+                    <div class="detail-box">
+                        <h2>pomegranate</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015703</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-raspberry-front.png" alt="raspberry Flavor">
+                    <div class="detail-box">
+                        <h2>raspberry</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955204</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-red-dragonfruit-front.png" alt="red dragon fruit Flavor">
+                    <div class="detail-box">
+                        <h2>dragonfruit</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955341</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-red-grape-front.png" alt="red grape Flavor">
+                    <div class="detail-box">
+                        <h2>red grape</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0714169839981</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-soursop-front.png" alt="soursop Flavor">
+                    <div class="detail-box">
+                        <h2>soursop</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955358</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-strawberry-front.png" alt="Strawberry Flavor">
+                    <div class="detail-box">
+                        <h2>Strawberry</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768015727</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/05/v-fresh-watermelon-front.png" alt="watermelon Flavor">
+                    <div class="detail-box">
+                        <h2>watermelon</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214473</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+    <!-- V-Fresh Coconut Milk Section -->
+    <div class="outer-border">
+        <div class="container v-fresh-cm">
+            <h1>V-FRESH NATURAL COCONUT MILK</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-ALMOND-FRONT-SIDE.png" alt="Almond Flavor">
+                    <div class="detail-box">
+                        <h2>almond</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980258</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-BANANA-FRONT-SIDE.png" alt="Banana Flavor">
+                    <div class="detail-box">
+                        <h2>banana</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980326</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-CHOCOLATE-FRONT-SIDE.png" alt="chocolate Flavor">
+                    <div class="detail-box">
+                        <h2>CHOCOLATE</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980272</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-MANGO-FRONT-SIDE.png" alt="mango Flavor">
+                    <div class="detail-box">
+                        <h2>MANGO</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980302</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-MELON-FRONT-SIDE.png" alt="melon Flavor">
+                    <div class="detail-box">
+                        <h2>MELON</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980340</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-MOCHA-FRONT-SIDE.png" alt="mocha Flavor">
+                    <div class="detail-box">
+                        <h2>MOCHA</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980319</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-ORIGINAL-FRONT-SIDE.png" alt="original Flavor">
+                    <div class="detail-box">
+                        <h2>ORIGINAL</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980333</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-PAPAYA-FRONT-SIDE.png" alt="papaya Flavor">
+                    <div class="detail-box">
+                        <h2>papaya</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980265</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-PINEAPPLE-FRONT-SIDE.png" alt="PINEAPPLE Flavor">
+                    <div class="detail-box">
+                        <h2>PINEAPPLE</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980296</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-MILK-STRAWBERRY-FRONT-SIDE.png" alt="STRAWBERRY Flavor">
+                    <div class="detail-box">
+                        <h2>STRAWBERRY</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980289</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>				
+                <!-- Add other V-Fresh Coconut Milk products here -->
+            </div>
+        </div>
+    </div>
+	
+	    <!-- V-Fresh Nectar Section -->
+    <div class="outer-border">
+        <div class="container v-fresh-nc">
+            <h1>V-FRESH NATURAL NECTAR DRINKS</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/SLIM-CAN-100-PINEAPPLE-FRONT.png" alt="pineapple Flavor">
+                    <div class="detail-box">
+                        <h2>100% pineapple</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0611419167217</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/SLIM-CAN-BANANA-FRONT.png" alt="Banana Flavor">
+                    <div class="detail-box">
+                        <h2>banana</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0611419167163</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/SLIM-CAN-LYCHEE-FRONT.png" alt="LYCHEE Flavor">
+                    <div class="detail-box">
+                        <h2>LYCHEE</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0700433955150</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/SLIM-CAN-MANGO-FRONT.png" alt="MANGO Flavor">
+                    <div class="detail-box">
+                        <h2>MANGO</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0700433955389</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/SLIM-CAN-ORANGE-FRONT.png" alt="ORANGE Flavor">
+                    <div class="detail-box">
+                        <h2>ORANGE</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0611419167170</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/SLIM-CAN-PASSIONFRUIT-FRONT.png" alt="PASSIONFRUIT Flavor">
+                    <div class="detail-box">
+                        <h2>PASSIONFRUIT</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0611419167187</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/SLIM-CAN-PEACH-FRONT.png" alt="PEACH Flavor">
+                    <div class="detail-box">
+                        <h2>PEACH</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0611419167194</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/SLIM-CAN-PINEAPPLE-FRONT.png" alt="PINEAPPLE Flavor">
+                    <div class="detail-box">
+                        <h2>PINEAPPLE</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0611419167200</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/SLIM-CAN-SOURSOP-FRONT.png" alt="SOURSOP Flavor">
+                    <div class="detail-box">
+                        <h2>SOURSOP</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0611419167323</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>				
+				<!-- Add other V-Fresh Nectar products here -->
+            </div>
+        </div>
+    </div>	
+
+	    <!-- V-Fresh Natural 100 Coconut Water Section -->
+    <div class="outer-border">
+        <div class="container v-fresh-100-cj">
+            <h1>V-FRESH NATURAL 100% COCONUT WATER</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-100-COCONUT-WATER-290ML.png" alt="100% COCONUT WATER 290mL">
+                    <div class="detail-box">
+                        <h2>100% COCONUT WATER</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955365</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+				<div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-100-COCONUT-WATER-330ML.png" alt="100% COCONUT WATER 330mL">
+                    <div class="detail-box">
+                        <h2>100% COCONUT WATER</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0700433955235</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-100-COCONUT-WATER-500ML.png" alt="100% COCONUT WATER 500mL">
+                    <div class="detail-box">
+                        <h2>100% COCONUT WATER</h2>
+                        <p>Net Weight: 500mL</p>
+                        <p class="barcode">BR: 0700433955242</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+				<!-- Add other V-Fresh Natural 100 Coconut Water products here -->
+            </div>
+        </div>
+    </div>	
+	
+		    <!-- V-Fresh Natural Coconut Juice With Pulp Section -->
+    <div class="outer-border">
+        <div class="container v-fresh-with-pulp">
+            <h1>V-FRESH NATURAL COCONUT JUICE WITH PULP</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-JUICE-WITH-PULP-290ML.png" alt="COCONUT WITH PULP 290mL">
+                    <div class="detail-box">
+                        <h2>COCONUT JUICE WITH PULP</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 8858768013587</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+				<div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-JUICE-WITH-PULP-330ML.png" alt="COCONUT WITH PULP 330mL">
+                    <div class="detail-box">
+                        <h2>COCONUT JUICE WITH PULP</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0700433954511</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/V-F-COCONUT-JUICE-WITH-PULP-500ML.png" alt="COCONUT WITH PULP 500mL">
+                    <div class="detail-box">
+                        <h2>COCONUT JUICE WITH PULP</h2>
+                        <p>Net Weight: 500mL</p>
+                        <p class="barcode">BR: 0700433954528</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+				<!-- Add other V-Fresh Natural Coconut Juice With Pulp products here -->
+            </div>
+        </div>
+    </div>
+	
+    <button id="scrollToTopBtn" class="scroll-to-top">
+        <span>GO UP &#11181;</span>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 100) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+		
+
+    </script>	
+</body>
+</html>

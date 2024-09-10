@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARLSBERG CAN DETAILS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 75%;
+            padding: 55px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            box-sizing: border-box;
+            opacity: 0; /* Start as invisible */
+        }
+
+        /* Define the fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Apply the animation to the container */
+        .container.fade-in {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        /* Left Side (Image Set) */
+        .product-image {
+            flex: 1;
+            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-image {
+            width: 350px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transition: opacity 0.3s ease-in-out;
+            opacity: 1;
+        }
+
+        .main-image.fade-out {
+            opacity: 0;
+        }
+
+        .additional-images {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .additional-images img {
+            width: 80px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .additional-images img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Right Side (Details) */
+        .content {
+            flex: 1;
+            padding-left: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        h1 {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-size: 4rem;
+            color: #153E52;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .details p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.5; /* Increase line-height for better readability */
+        }
+
+        .details span {
+            font-weight: bold;
+            color: #00c606;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                transform: scale(1); /* Remove scaling for small screens */
+            }
+
+            .main-image {
+                width: 70%;
+            }
+
+            .additional-images img {
+                width: 60px;
+            }
+
+            .content {
+                padding-left: 0;
+                text-align: center;
+            }
+        }
+
+        .jf {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <!-- Left Side (Image Set) -->
+        <div class="product-image">
+            <img id="mainImage" class="main-image" src="https://tinypic.host/images/2024/09/09/CARLSBERG-NON-ALCOHOL-BEER-IN-CAN-FRONT.png" alt="Carlsberg Beer">
+
+            <!-- Additional Images Under Main Image -->
+            <div class="additional-images">
+                <img src="https://tinypic.host/images/2024/09/09/CARLSBERG-NON-ALCOHOL-BEER-IN-CAN-BACK.png" alt="Carlsberg Beer" onclick="swapImages(this)">
+                <img src="https://tinypic.host/images/2024/09/09/CARLSBERG-NON-ALCOHOL-BEER-IN-CAN-BACK.png" alt="Carlsberg Beer" onclick="swapImages(this)">
+                <img src="https://tinypic.host/images/2024/09/09/CARLSBERG-NON-ALCOHOL-BEER-IN-CAN-BACK.png" alt="Carlsberg Beer" onclick="swapImages(this)">
+            </div>
+        </div>
+
+        <!-- Right Side (Product Details) -->
+        <div class="content">
+            <h1>CARLSBERG</h1>
+
+            <div class="details">
+                <p><span>Name:</span> Carlsberg</p>
+                <p><span>Net Weight:</span> 330mL</p>
+                <p><span>Packing Size:</span> 24 x 330mL</p>
+                <p><span>Unit Barcode:</span> 5290089003688</p>
+                <p><span>Country of Origin:</span> Cyprus</p>
+                <p class="jf"><span>Ingredients:</span> Water, Barley malt, Carbon dioxide, Natural Hope Flavoring, Hops.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function swapImages(image) {
+            const mainImage = document.getElementById('mainImage');
+            // Add the fade-out class to start the fade effect
+            mainImage.classList.add('fade-out');
+
+            // After the fade-out transition ends, swap the images
+            mainImage.addEventListener('transitionend', function() {
+                let tempSrc = image.src;
+                image.src = mainImage.src;
+                mainImage.src = tempSrc;
+
+                // Remove the fade-out class and trigger a fade-in
+                mainImage.classList.remove('fade-out');
+                mainImage.classList.add('fade-in');
+
+                // Remove the fade-in class after transition ends to reset for future swaps
+                mainImage.addEventListener('transitionend', function() {
+                    mainImage.classList.remove('fade-in');
+                }, { once: true });
+            }, { once: true });
+        }
+
+        // Add the fade-in class to the container on page load
+        window.addEventListener('load', function() {
+            document.getElementById('container').classList.add('fade-in');
+        });
+    </script>
+
+</body>
+
+</html>

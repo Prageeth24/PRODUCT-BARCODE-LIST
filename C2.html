@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C2</title>
+    <style>
+        body {
+            background: hsl(220deg, 10%, 97%);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            transition: opacity 0.5s ease-out; /* Fade transition effect */
+            opacity: 1;
+        }
+
+        .fade-out {
+            opacity: 0; /* Fade out effect */
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 3s ease-out forwards; /* Fade-in effect */
+        }
+		
+        .outer-border {
+            border-radius: 15px; /* Rounded corners for outer border */
+            padding: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 100%; /* Full width */
+            box-sizing: border-box;
+        }
+        
+		 /* C2 355ml Styles */
+        .container.c2-355ml {
+            border: 5px solid #209213; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.c2-355ml h1 {
+            text-align: center;
+            background-color: #209213;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		/* C2 500ml Styles */
+        .container.c2-500ml {
+            border: 5px solid #209213; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.c2-500ml h1 {
+            text-align: center;
+            background-color: #209213;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+
+        /* Common Gallery Styles */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Increased gap between items */
+            justify-content: center;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px; /* Fixed width for each item (image and detail box) */
+            margin: 0; /* No extra margin */
+        }
+        .gallery-item img {
+            width: 100%; /* Make image responsive */
+            max-width: 170px; /* Limit image size */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .detail-box {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px; /* Consistent margin-top for better alignment */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Detail box takes up the full width of the item */
+            max-width: 170px;
+        }
+        .detail-box h2 {
+            text-transform: uppercase;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .detail-box p {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #555;
+        }
+		
+        .barcode {
+            color: #00a31e !important; /* Ensure color */
+            display: block;
+            font-weight: bold;
+            font-size: 16px !important; /* Adjust size as needed */
+            margin-top: 10px;
+            color: #00a31e;
+            text-align: center;
+        }
+		
+			.scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px; /* Rounded corners for a modern look */
+            padding: 10px 4px; /* Adjust padding to accommodate text and icon */
+            cursor: pointer;
+            font-size: 16px; /* Adjust font size */
+            display: none; /* Hidden by default, shown on scroll */
+            transition: opacity 0.5s ease, background-color 0.5s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            white-space: nowrap; /* Prevent text wrapping */
+            text-align: center; /* Center text vertically */
+        }
+        .scroll-to-top:hover {
+            background-color: #41be0d; /* Darker background on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slightly more pronounced shadow on hover */
+        }
+        .scroll-to-top span {
+            display: inline-block;
+            vertical-align: center; /* Align icon and text */
+            margin-left: 2px; /* Space between icon and text */
+        }
+		
+		
+		
+		
+
+        /* Button Styles */
+        .button-arounder {
+            font-size: 1rem; /* Made the button smaller */
+            font-weight: bold;
+            background: #ffffff;
+            color: black;
+            box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);
+            transform: translateY(0);
+            border: solid 2px black;
+            padding: .375em 0.75em; /* Adjusted padding to make the button smaller */
+            margin-top: 10px;
+            border-radius: 8px; /* Slight rounded corners for better fit inside card */
+            --dur: .15s;
+            --delay: .15s;
+            --radius: 8px; /* Adjusted the radius */
+            transition: 
+                border-radius var(--dur) var(--delay) ease-out,
+                box-shadow calc(var(--dur) * 4) ease-out,
+                transform calc(var(--dur) * 4) ease-out,
+                background calc(var(--dur) * 4) steps(4, jump-end);
+            text-decoration: none; /* Remove underline from link */
+            display: inline-block; /* Ensure it aligns like a button */
+            text-align: center; /* Center text in link */
+        }
+
+        .button-arounder:hover,
+        .button-arounder:focus {
+            box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, .2);
+            transform: translateY(-4px);
+            background: hsl(110deg, 70%, 65%);
+            border-radius: var(--radius);
+        }
+    </style>
+</head>
+<body id="page-body" class="fade-in">
+
+    <!-- C2 355ml Section -->
+    <div class="outer-border">
+        <div class="container c2-355ml">
+            <h1>C2 GREEN TEA LEAVES DRINK 355mL</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/09/Green-Tea-Apple-C2-355ml-image.png" alt="APPLE 355ML Flavor">
+                    <div class="detail-box">
+                        <h2>APPLE</h2>
+                        <p>Net Weight: 355mL</p>
+                        <p class="barcode">BR: 4800016052040</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/09/Green-Tea-Classic-C2-355ml-image.png" alt="CLASSIC 355ML Flavor">
+                    <div class="detail-box">
+                        <h2>CLASSIC</h2>
+                        <p>Net Weight: 355mL</p>
+                        <p class="barcode">BR: 4800016052019</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/09/Green-Tea-Lemon-C2-355ml-image.png" alt="LEMON 355ML Flavor">
+                    <div class="detail-box">
+                        <h2>LEMON</h2>
+                        <p>Net Weight: 355mL</p>
+                        <p class="barcode">BR: 4800016052057</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>							
+				<!-- Add other C2 355ml products here -->
+            </div>
+        </div>
+    </div>	
+
+    <!-- C2 500ml Section -->
+    <div class="outer-border">
+        <div class="container c2-500ml">
+            <h1>C2 GREEN TEA LEAVES DRINK 500mL</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/09/Green-Tea-Apple-C2-500ml-image.png" alt="APPLE 500ML Flavor">
+                    <div class="detail-box">
+                        <h2>APPLE</h2>
+                        <p>Net Weight: 500ML</p>
+                        <p class="barcode">BR: 4800016052132</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/09/Green-Tea-Classic-C2-500ml-image.png" alt="CLASSIC 500ML Flavor">
+                    <div class="detail-box">
+                        <h2>CLASSIC</h2>
+                        <p>Net Weight: 500ML</p>
+                        <p class="barcode">BR: 4800016052101</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/09/Green-Tea-Lemon-C2-500ml-image.png" alt="LEMON 500ML Flavor">
+                    <div class="detail-box">
+                        <h2>LEMON</h2>
+                        <p>Net Weight: 500ML</p>
+                        <p class="barcode">BR: 4800016052149</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>							
+				<!-- Add other C2 500ml products here -->
+            </div>
+        </div>
+    </div>	
+	
+	
+    <button id="scrollToTopBtn" class="scroll-to-top">
+        <span>GO UP &#11181;</span>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 100) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+		
+
+    </script>
+	
+</body>
+</html>

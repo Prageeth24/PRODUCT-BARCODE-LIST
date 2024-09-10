@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TROPICAL GARDEN</title>
+    <style>
+        body {
+            background: hsl(220deg, 10%, 97%);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            transition: opacity 0.5s ease-out; /* Fade transition effect */
+            opacity: 1;
+        }
+
+        .fade-out {
+            opacity: 0; /* Fade out effect */
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 3s ease-out forwards; /* Fade-in effect */
+        }
+		
+        .outer-border {
+            border-radius: 15px; /* Rounded corners for outer border */
+            padding: 10px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 100%; /* Full width */
+            box-sizing: border-box;
+        }
+        
+        /* Tropical Garden bs Styles */
+        .container.tropical-garden-bs {
+            border: 5px solid #ffb900; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.tropical-garden-bs h1 {
+            text-align: center;
+            background-color: #ffb900;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		/* Tropical Garden cm Styles */
+        .container.tropical-garden-cm {
+            border: 5px solid #00c5ff; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.tropical-garden-cm h1 {
+            text-align: center;
+            background-color: #00c5ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+		/* Tropical Garden falooda Styles */
+        .container.tropical-garden-falooda {
+            border: 5px solid #ff7c00; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.tropical-garden-falooda h1 {
+            text-align: center;
+            background-color: #ff7c00;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		/* Tropical Garden 100 cj Styles */
+        .container.tropical-garden-100-cj {
+            border: 5px solid #00b42c; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.tropical-garden-100-cj h1 {
+            text-align: center;
+            background-color: #00b52c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		
+		
+		/* Tropical Garden 100 sj Styles */
+        .container.tropical-garden-100-sj {
+            border: 5px solid #007e0f; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.tropical-garden-100-sj h1 {
+            text-align: center;
+            background-color: #007e0f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+		
+				/* Tropical Garden with pulp Styles */
+        .container.tropical-garden-with-pulp {
+            border: 5px solid #00b52c; /* Outer border for the container */
+            border-radius: 12px; /* Rounded corners */
+            padding: 20px; /* Space between border and content */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+            background-color: #FFFFFF; /* Background color for the container */
+            margin: 0 auto; /* Center the container */
+            box-sizing: border-box;
+        }
+        .container.tropical-garden-with-pulp h1 {
+            text-align: center;
+            background-color: #00b52c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+		
+
+        /* Common Gallery Styles */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Increased gap between items */
+            justify-content: center;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px; /* Fixed width for each item (image and detail box) */
+            margin: 0; /* No extra margin */
+        }
+        .gallery-item img {
+            width: 100%; /* Make image responsive */
+            max-width: 170px; /* Limit image size */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .detail-box {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px; /* Consistent margin-top for better alignment */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Detail box takes up the full width of the item */
+            max-width: 170px;
+        }
+        .detail-box h2 {
+            text-transform: uppercase;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .detail-box p {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #555;
+        }
+		
+        .barcode {
+            color: #00a31e !important; /* Ensure color */
+            display: block;
+            font-weight: bold;
+            font-size: 16px !important; /* Adjust size as needed */
+            margin-top: 10px;
+            color: #00a31e;
+            text-align: center;
+        }
+		
+			.scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px; /* Rounded corners for a modern look */
+            padding: 10px 4px; /* Adjust padding to accommodate text and icon */
+            cursor: pointer;
+            font-size: 16px; /* Adjust font size */
+            display: none; /* Hidden by default, shown on scroll */
+            transition: opacity 0.5s ease, background-color 0.5s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            white-space: nowrap; /* Prevent text wrapping */
+            text-align: center; /* Center text vertically */
+        }
+        .scroll-to-top:hover {
+            background-color: #41be0d; /* Darker background on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slightly more pronounced shadow on hover */
+        }
+        .scroll-to-top span {
+            display: inline-block;
+            vertical-align: center; /* Align icon and text */
+            margin-left: 2px; /* Space between icon and text */
+        }
+		
+		
+		
+		
+
+        /* Button Styles */
+        .button-arounder {
+            font-size: 1rem; /* Made the button smaller */
+            font-weight: bold;
+            background: #ffffff;
+            color: black;
+            box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);
+            transform: translateY(0);
+            border: solid 2px black;
+            padding: .375em 0.75em; /* Adjusted padding to make the button smaller */
+            margin-top: 10px;
+            border-radius: 8px; /* Slight rounded corners for better fit inside card */
+            --dur: .15s;
+            --delay: .15s;
+            --radius: 8px; /* Adjusted the radius */
+            transition: 
+                border-radius var(--dur) var(--delay) ease-out,
+                box-shadow calc(var(--dur) * 4) ease-out,
+                transform calc(var(--dur) * 4) ease-out,
+                background calc(var(--dur) * 4) steps(4, jump-end);
+            text-decoration: none; /* Remove underline from link */
+            display: inline-block; /* Ensure it aligns like a button */
+            text-align: center; /* Center text in link */
+        }
+
+        .button-arounder:hover,
+        .button-arounder:focus {
+            box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, .2);
+            transform: translateY(-4px);
+            background: hsl(110deg, 70%, 65%);
+            border-radius: var(--radius);
+        }
+    </style>
+</head>
+<body id="page-body" class="fade-in">
+
+    <!-- Tropical Garden Basil Seed Section -->
+    <div class="outer-border">
+        <div class="container tropical-garden-bs">
+            <h1>TROPICAL GARDEN BASIL SEED</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/tropical-garden-cocktail-front.png" alt="cocktail Flavor">
+                    <div class="detail-box">
+                        <h2>cocktail</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0689908980487</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+				<div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/tropical-garden-honey-front.png" alt="honey Flavor">
+                    <div class="detail-box">
+                        <h2>honey</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214152</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/tropical-garden-lychee-front.png" alt="lychee Flavor">
+                    <div class="detail-box">
+                        <h2>lychee</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214183</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/tropical-garden-mango-front.png" alt="mango Flavor">
+                    <div class="detail-box">
+                        <h2>mango</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214077</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/tropical-garden-orange-front.png" alt="orange Flavor">
+                    <div class="detail-box">
+                        <h2>orange</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214121</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/tropical-garden-passionfruit-front.png" alt="passionfruit Flavor">
+                    <div class="detail-box">
+                        <h2>passionfruit</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214213</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/tropical-garden-pineapple-front.png" alt="pineapple Flavor">
+                    <div class="detail-box">
+                        <h2>pineapple</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214220</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/tropical-garden-pomegranate-front.png" alt="pomegranate Flavor">
+                    <div class="detail-box">
+                        <h2>pomegranate</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214114</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/tropical-garden-strawberry-front.png" alt="strawberry Flavor">
+                    <div class="detail-box">
+                        <h2>strawberry</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0703546214169</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+    <!-- Tropical Garden Coconut Milk Section -->
+    <div class="outer-border">
+        <div class="container tropical-garden-cm">
+            <h1>TROPICAL GARDEN COCONUT MILK</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/COCONUT-MILK-ALMOND-FRONT-SIDE.png" alt="Almond Flavor">
+                    <div class="detail-box">
+                        <h2>almond</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954429</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/COCONUT-MILK-BANANA-FRONT-SIDE.png" alt="Banana Flavor">
+                    <div class="detail-box">
+                        <h2>banana</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954436</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/COCONUT-MILK-CHOCOLATE-FRONT-SIDE.png" alt="CHOCOLATE Flavor">
+                    <div class="detail-box">
+                        <h2>CHOCOLATE</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954443</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/COCONUT-MILK-MANGO-FRONT-SIDE.png" alt="MANGO Flavor">
+                    <div class="detail-box">
+                        <h2>MANGO</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954450</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/COCONUT-MILK-MELON-FRONT-SIDE.png" alt="MELON Flavor">
+                    <div class="detail-box">
+                        <h2>MELON</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954467</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/COCONUT-MILK-MOCHA-FRONT-SIDE.png" alt="MOCHA Flavor">
+                    <div class="detail-box">
+                        <h2>MOCHA</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954474</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/COCONUT-MILK-ORIGINAL-FRONT-SIDE.png" alt="ORIGINAL Flavor">
+                    <div class="detail-box">
+                        <h2>ORIGINAL</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954412</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/COCONUT-MILK-PINEAPPLE-FRONT-SIDE.png" alt="PINEAPPLE Flavor">
+                    <div class="detail-box">
+                        <h2>PINEAPPLE</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954481</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/COCONUT-MILK-STRAWBERRY-FRONT-SIDE.png" alt="STRAWBERRY Flavor">
+                    <div class="detail-box">
+                        <h2>STRAWBERRY</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954498</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>				
+                <!-- Add other Tropical Garden Coconut Milk products here -->
+            </div>
+        </div>
+    </div>
+	
+
+    <!-- Tropical Garden Falooda Section -->
+    <div class="outer-border">
+        <div class="container tropical-garden-falooda">
+            <h1>TROPICAL GARDEN FALOODA DRINK</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/FALOODA-ALMOND-FRONT-SIDE.png" alt="Almond Flavor">
+                    <div class="detail-box">
+                        <h2>almond</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955051</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/FALOODA-BANANA-FRONT-SIDE.png" alt="Banana Flavor">
+                    <div class="detail-box">
+                        <h2>banana</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955068</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/FALOODA-CHOCOLATE-FRONT-SIDE.png" alt="CHOCOLATE Flavor">
+                    <div class="detail-box">
+                        <h2>CHOCOLATE</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955075</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/FALOODA-MANGO-FRONT-SIDE.png" alt="MANGO Flavor">
+                    <div class="detail-box">
+                        <h2>MANGO</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955082</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/FALOODA-MELON-FRONT-SIDE.png" alt="MELON Flavor">
+                    <div class="detail-box">
+                        <h2>MELON</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955099</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/FALOODA-PISTACHIO-FRONT-SIDE.png" alt="PISTACHIO Flavor">
+                    <div class="detail-box">
+                        <h2>PISTACHIO</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955105</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/FALOODA-ROSE-FRONT-SIDE.png" alt="ROSE Flavor">
+                    <div class="detail-box">
+                        <h2>ROSE</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955112</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/FALOODA-STRAWBERRY-FRONT-SIDE.png" alt="STRAWBERRY Flavor">
+                    <div class="detail-box">
+                        <h2>STRAWBERRY</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955129</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/FALOODA-VANILLA-FRONT-SIDE.png" alt="VANILLA Flavor">
+                    <div class="detail-box">
+                        <h2>VANILLA</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433955136</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>				
+                <!-- Add other Tropical Garden Falooda products here -->
+            </div>
+        </div>
+    </div>
+
+
+	
+
+	    <!-- Tropical Garden 100 Coconut Water Section -->
+    <div class="outer-border">
+        <div class="container tropical-garden-100-cj">
+            <h1>TROPICAL GARDEN 100% COCONUT WATER</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/TG-100-COCONUT-WATER-290ML.png" alt="100% COCONUT WATER 290mL">
+                    <div class="detail-box">
+                        <h2>100% COCONUT WATER</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954504</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/TG-100-COCONUT-WATER-330ML.png" alt="100% COCONUT WATER 330mL">
+                    <div class="detail-box">
+                        <h2>100% COCONUT WATER</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0711347429132</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>                				
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/TG-100-COCONUT-WATER-500ML.png" alt="100% COCONUT WATER 500mL">
+                    <div class="detail-box">
+                        <h2>100% COCONUT WATER</h2>
+                        <p>Net Weight: 500mL</p>
+                        <p class="barcode">BR: 0700433955372</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+				<!-- Add other Tropical Garden 100 Coconut Water products here -->
+            </div>
+        </div>
+    </div>	
+
+	    <!-- Tropical Garden 100 Soursop Juice Section -->
+    <div class="outer-border">
+        <div class="container tropical-garden-100-sj">
+            <h1>TROPICAL GARDEN 100% SOURSOP JUICE</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/TG-100-SOURSOP-JUICE-330ML.png" alt="100% SOURSOP JUICE 330mL">
+                    <div class="detail-box">
+                        <h2>100% SOURSOP JUICE</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 0711347429149</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+				<!-- Add other Tropical Garden 100 Soursop Juice products here -->
+            </div>
+        </div>
+    </div>
+	
+	
+	
+		    <!-- Tropical Garden Coconut Juice with Pulp Section -->
+    <div class="outer-border">
+        <div class="container tropical-garden-with-pulp">
+            <h1>TROPICAL GARDEN COCONUT JUICE WITH PULP</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/TG-COCONUT-JUICE-WITH-PULP-290ML.png" alt="100% COCONUT WATER 290mL">
+                    <div class="detail-box">
+                        <h2>COCONUT JUICE WITH PULP</h2>
+                        <p>Net Weight: 290mL</p>
+                        <p class="barcode">BR: 0700433954566</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/TG-COCONUT-JUICE-WITH-PULP-330ML.png" alt="100% COCONUT WATER 330mL">
+                    <div class="detail-box">
+                        <h2>COCONUT JUICE WITH PULP</h2>
+                        <p>Net Weight: 330mL</p>
+                        <p class="barcode">BR: 8936020030845</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>                				
+                <div class="gallery-item">
+                    <img src="https://tinypic.host/images/2024/09/07/TG-COCONUT-JUICE-WITH-PULP-500ML.png" alt="100% COCONUT WATER 500mL">
+                    <div class="detail-box">
+                        <h2>COCONUT JUICE WITH PULP</h2>
+                        <p>Net Weight: 500mL</p>
+                        <p class="barcode">BR: 0700433954535</p>
+						<!-- Link styled as a button -->
+                        <a href="pro.html" class="button-arounder" onclick="fadeOut(event)">DETAILS</a>
+                    </div>
+                </div>	
+				<!-- Add other Tropical Garden Coconut Juice with Pulp products here -->
+            </div>
+        </div>
+    </div>
+	
+    <button id="scrollToTopBtn" class="scroll-to-top">
+        <span>GO UP &#11181;</span>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 100) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+		
+
+    </script>	
+</body>
+</html>
